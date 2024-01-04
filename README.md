@@ -14,14 +14,13 @@ Backend submission by Ng Zi Xin. It is mostly completed, with minor code cleanup
 ```shell
 ruby -v
 ```
-The ouput should start with something like `ruby 3.2.2`
+   The ouput should start with something like `ruby 3.2.2`
 If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 ```shell
 rbenv install 3.2.2
 ```
 
 5. Install dependencies for the project by entering this command:
-Using [Bundler](https://github.com/bundler/bundler)
 ```shell
 bundle
 ```
