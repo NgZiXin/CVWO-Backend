@@ -14,7 +14,7 @@ Backend submission by Ng Zi Xin. It is mostly completed, with minor code cleanup
 ```shell
 ruby -v
 ```
-   The ouput should start with something like `ruby 3.2.2`
+The ouput should start with something like `ruby 3.2.2`
 If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 ```shell
 rbenv install 3.2.2
@@ -22,21 +22,26 @@ rbenv install 3.2.2
 
 5. Install dependencies for the project by entering this command:
 ```shell
-bundle
+bundle install
 ```
 
-6. Initialize the database
+6. Edit config/initializers/cors.rb to add front-end development and production url(s).
+   ![Cors](public/images/Cors.png)
+
+7. Edit config/database.yml to add configure postgres database. For more information, refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-20-04).
+
+8. Initialize the database
 ```shell
 rails db:create db:migrate db:seed
 ```
 
-7. Run the app in development mode by entering this command:
+9. Run the app in development mode by entering this command:
 ```shell
-rails s
+rails server
 ```
 
-8. You should see a page like this.
-   ![Command Line](public/images/ServeApp.png)
+10. You should see a page like this.
+   ![ServeApp](public/images/ServeApp.png)
 
-9. Proceed to [frontend set-up](https://github.com/NgZiXin/CVWO-Frontend).
+11. Proceed to [frontend set-up](https://github.com/NgZiXin/CVWO-Frontend).
 
