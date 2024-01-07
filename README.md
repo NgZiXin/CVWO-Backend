@@ -25,10 +25,10 @@ rbenv install 3.2.2
 bundle install
 ```
 
-6. Edit config/initializers/cors.rb to add front-end development and production url(s).
+6. Edit **config/initializers/cors.rb** to add your frontend client url(s).
    ![Cors](public/images/Cors.png)
 
-7. Edit config/database.yml to add configure postgres database. For more information, refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-20-04).
+7. Edit **config/database.yml** to configure postgres database. For more information, refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-20-04).
 
 8. Initialize the database
 ```shell
