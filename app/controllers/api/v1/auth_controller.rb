@@ -17,8 +17,8 @@ class Api::V1::AuthController < ApplicationController
         @user = User.find_by!(username: login_params[:username])
         if @user.authenticate(login_params[:password])
             @token = encode_token(user_id: @user.id)
-            cookies.signed[:jwt] = { value:  @token, httponly: true, secure: true, domain: :all }
-            cookies[:user_id] = { value: @user.id.to_s, secure: true, domain: :all }
+            cookies.signed[:jwt] = { value:  @token, httponly: true, secure: true, domain: :all,same_site: :none }
+            cookies[:user_id] = { value: @user.id.to_s, secure: true, domain: :all,same_site: :none }
             render json: {
                 user: UserSerializer.new(@user),
             }, status: :accepted
