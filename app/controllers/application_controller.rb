@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-    include ::ActionController::Cookies
     before_action :authenticated
 
     def encode_token(payload)
@@ -7,8 +6,9 @@ class ApplicationController < ActionController::API
     end
 
     def decoded_token
-        token = cookies.signed[:jwt]
-        if token
+        header = request.headers['Authorization']
+        if header
+            token = header.split(" ")[1]
             begin
                 JWT.decode(token, 'cvwoSecretKey', true, algorithm: 'HS256')
             rescue JWT::DecodeError

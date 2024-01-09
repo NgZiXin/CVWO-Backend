@@ -1,5 +1,5 @@
 class Api::V1::AuthController < ApplicationController
-    skip_before_action :authenticated, only: %i[ login logout]
+    skip_before_action :authenticated, only: %i[ login ]
     rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
     # GET /me
@@ -17,21 +17,13 @@ class Api::V1::AuthController < ApplicationController
         @user = User.find_by!(username: login_params[:username])
         if @user.authenticate(login_params[:password])
             @token = encode_token(user_id: @user.id)
-            cookies.signed[:jwt] = { value:  @token, httponly: true, secure: true, domain: :all,same_site: :none }
-            cookies[:user_id] = { value: @user.id.to_s, secure: true, domain: :all,same_site: :none }
             render json: {
                 user: UserSerializer.new(@user),
+                token: @token
             }, status: :accepted
         else
             render json: { message: 'Incorrect password' }, status: :unauthorized
         end
-    end
-
-    # DELETE /logout
-    def logout
-        cookies.delete(:jwt, domain: :all)
-        cookies.delete(:user_id, domain: :all)
-        render json: nil, status: :ok
     end
 
     private 

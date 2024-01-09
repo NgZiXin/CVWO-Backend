@@ -18,7 +18,6 @@ Rails.application.routes.draw do
       get "/me", to: "auth#me"
       get "/me/history", to: "auth#history"
       post "/login", to: "auth#login"
-      delete "/logout", to: "auth#logout"
       post "/likes", to: "likes#create"
       delete "/likes/:id", to: "likes#destroy"
     end

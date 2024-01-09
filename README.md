@@ -25,23 +25,20 @@ rbenv install 3.2.2
 bundle install
 ```
 
-6. Edit **config/initializers/cors.rb** to add your frontend client url(s).
-   ![Cors](public/images/Cors.png)
+6. Edit **config/database.yml** to configure postgres database. For more information, refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-20-04).
 
-7. Edit **config/database.yml** to configure postgres database. For more information, refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-20-04).
-
-8. Initialize the database
+7. Initialize the database
 ```shell
 rails db:create db:migrate db:seed
 ```
 
-9. Run the app in development mode by entering this command:
+8. Run the app in development mode by entering this command:
 ```shell
 rails server
 ```
 
-10. You should see a page like this.
+9. You should see a page like this.
    ![ServeApp](public/images/ServeApp.png)
 
-11. Proceed to [frontend set-up](https://github.com/NgZiXin/CVWO-Frontend).
+10. Proceed to [frontend set-up](https://github.com/NgZiXin/CVWO-Frontend).
 

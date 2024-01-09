@@ -7,11 +7,10 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3000","http://localhost:3001","https://cvwo-frontend.vercel.app" # Client's domain (development & production)
+    origins "*" # Allows API request from any sites
 
     resource "*",
       headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head],
-      credentials: true
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
