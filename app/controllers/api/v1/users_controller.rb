@@ -16,8 +16,12 @@ class Api::V1::UsersController < ApplicationController
 
     # POST /signup
     def create 
-        user = User.create!(user_params)
-        render json: @user, status: :created
+        @user = User.create!(user_params)
+        @token = encode_token(user_id: @user.id)
+        render json: {
+                user: UserSerializer.new(@user),
+                token: @token
+        }, status: :created
     end
 
     # PATCH /users/1
