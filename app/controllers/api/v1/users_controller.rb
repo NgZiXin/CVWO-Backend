@@ -42,6 +42,8 @@ class Api::V1::UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
         @user = User.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+        render json: { message: 'Not Found' }, status: :not_found
     end
 
     # Only allow authorized users to update profile

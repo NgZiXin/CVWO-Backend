@@ -11,7 +11,7 @@ class Api::V1::MainThreadsController < ApplicationController
 
   # GET /main_threads/1
   def show
-    render json: @main_thread
+      render json: @main_thread
   end
 
   # GET /main_threads/1/comments
@@ -62,6 +62,8 @@ class Api::V1::MainThreadsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_main_thread
       @main_thread = MainThread.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render json: { message: 'Not Found' }, status: :not_found
     end
 
     # Only allow authorized users to delete/ update thread

@@ -19,6 +19,8 @@ class Api::V1::CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
         @category = Category.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+        render json: { message: 'Not Found' }, status: :not_found
     end
 
     def handle_invalid_record(e)
