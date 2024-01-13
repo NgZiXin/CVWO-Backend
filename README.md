@@ -1,6 +1,6 @@
 # CVWO Assignment backend
 
-Backend submission by Ng Zi Xin. It is mostly completed, with minor code cleanup and documentation. Do let me know of any improvements I can make, thank you.
+Backend submission by Ng Zi Xin.
 
 ## Getting Started
 
