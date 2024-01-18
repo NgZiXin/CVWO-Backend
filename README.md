@@ -2,6 +2,8 @@
 
 Backend submission by Ng Zi Xin.
 
+Access the deployed web application here: [https://cvwo-frontend.vercel.app/](https://cvwo-frontend.vercel.app/)
+
 ## Getting Started
 
 1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) this repo.
